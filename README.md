@@ -1,1 +1,1 @@
-# paper-trading
+# Paper Trading
