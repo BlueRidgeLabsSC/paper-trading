@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test event initialization expect object to match snapshot 1`] = `
+OrderData {
+  "average_price": 1.6,
+  "cumulative_quantity": 30,
+  "fees": 20,
+  "price": 1.2,
+  "symbol": "AAPL",
+  "type": "limit",
+}
+`;

@@ -1,7 +1,7 @@
 import { v4 as uuid } from "uuid";
 import IEvent from "./IEvent";
-import IEventData from "./EventData/IEventData";
-import IMetadata from "./EventData/IMetadata";
+import IEventData from "./IEventData";
+import IMetadata from "./IMetadata";
 
 class Event implements IEvent {
   id: string;

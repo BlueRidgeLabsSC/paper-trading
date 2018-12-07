@@ -15,13 +15,16 @@
   "author": "Saeed Alalwan <alalwan@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^6.1.0",
     "mysql": "^2.16.0",
-    "robinhood": "^1.6.4"
+    "robinhood": "^1.6.4",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "@types/dotenv": "^6.1.0",
     "@types/jest": "^23.3.10",
     "@types/mysql": "^2.15.5",
+    "@types/uuid": "^3.4.4",
     "jest": "^23.6.0",
     "shelljs": "^0.8.3",
     "supertest": "^3.3.0",

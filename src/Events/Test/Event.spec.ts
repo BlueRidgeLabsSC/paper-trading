@@ -1,5 +1,5 @@
 import Event from "../Event";
-import IEventData from "../EventData/IEventData";
+import IEventData from "../IEventData";
 
 const MockedEventData = jest.fn<IEventData>(() => ({
   aggregate_id: "aggregate_id",
@@ -7,7 +7,7 @@ const MockedEventData = jest.fn<IEventData>(() => ({
   constructor: { name: "Mocked" }
 }));
 
-describe("test event's event data assignment", () => {
+describe("test event initialization", () => {
   const data = new MockedEventData();
 
   const user_id = "user_id";

@@ -1,4 +1,4 @@
-import IEventData from "./EventData/IEventData";
+import IEventData from "./IEventData";
 
 interface IEvent {
   id: string;

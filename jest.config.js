@@ -1,12 +1,12 @@
 module.exports = {
   globals: {
     "ts-jest": {
-      tsConfigFile: "tsconfig.json"
+      tsConfig: "tsconfig.json"
     }
   },
   moduleFileExtensions: ["ts", "js"],
   transform: {
-    "^.+\\.(ts)$": "./node_modules/ts-jest/preprocessor.js"
+    "^.+\\.(ts)$": "ts-jest"
   },
   testMatch: ["**/src/**/*.spec.(ts|js)"],
   testEnvironment: "node"

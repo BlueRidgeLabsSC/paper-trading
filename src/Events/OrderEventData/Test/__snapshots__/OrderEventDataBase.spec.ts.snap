@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test OrderEventData initialization expect OrderEventData to match snapshot 1`] = `
+OrderEventDataTest {
+  "aggregate_id": "aggregate_id",
+  "data": mockConstructor {},
+  "side": "test_side__buy",
+  "state": "test_state__filled",
+  "version": 0,
+}
+`;
