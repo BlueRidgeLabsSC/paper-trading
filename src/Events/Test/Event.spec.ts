@@ -1,5 +1,5 @@
 import Event from "../Event";
-import IEventData from "../IEventData";
+import IEventData from "../../EventData/IEventData";
 
 const MockedEventData = jest.fn<IEventData>(() => ({
   aggregate_id: "aggregate_id",
@@ -10,11 +10,11 @@ const MockedEventData = jest.fn<IEventData>(() => ({
 describe("test event initialization", () => {
   const data = new MockedEventData();
 
-  const user_id = "user_id";
-  const event = new Event(user_id, data);
+  const account_id = "account_id";
+  const event = new Event(account_id, data);
 
-  test("expect passed user_id to get assigned correctly", () => {
-    expect(event.user_id == user_id).toBeTruthy();
+  test("expect passed account_id to get assigned correctly", () => {
+    expect(event.account_id == account_id).toBeTruthy();
   });
 
   test("Event should have the same aggregate_id as event data", () => {

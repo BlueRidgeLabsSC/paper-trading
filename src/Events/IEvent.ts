@@ -1,9 +1,9 @@
-import IEventData from "./IEventData";
+import IEventData from "../EventData/IEventData";
 
 interface IEvent {
   id: string;
   type: string;
-  user_id: string;
+  account_id: string;
   aggregate_id: string;
   created_on: Date;
   data: IEventData;
