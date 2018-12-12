@@ -5,19 +5,10 @@ const MockedData = jest.fn<IData>(() => ({ testData: "test" }));
 const data = new MockedData();
 
 describe("test BuyOrderPartiallyFilled initialization", () => {
-  const buyOrderPartiallyFilled = new OrderPartiallyFilled(
-    "buy",
-    "id",
-    1,
-    data
-  );
+  const buyOrderPartiallyFilled = new OrderPartiallyFilled("id", 1, data);
 
   test("expect version to be what was passed '1'", () => {
     expect(buyOrderPartiallyFilled.version).toEqual(1);
-  });
-
-  test("expect side to be 'buy'", () => {
-    expect(buyOrderPartiallyFilled.side).toEqual("buy");
   });
 
   test("expect state to be 'partially_filled'", () => {

@@ -7,14 +7,12 @@ export default abstract class OrderBase extends CommandBase<
   OrderMetadata
 > {
   abstract state: string;
-  side: string;
+
   constructor(
-    side: string,
     data: OrderData,
     aggregate_id?: string,
     metadata?: OrderMetadata
   ) {
     super(data, aggregate_id, metadata);
-    this.side = side;
   }
 }

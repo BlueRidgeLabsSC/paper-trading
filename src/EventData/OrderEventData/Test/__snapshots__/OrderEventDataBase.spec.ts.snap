@@ -4,7 +4,6 @@ exports[`test OrderEventData initialization expect OrderEventData to match snaps
 OrderEventDataTest {
   "aggregate_id": "aggregate_id",
   "data": mockConstructor {},
-  "side": "test_side__buy",
   "state": "test_state__filled",
   "version": 0,
 }
