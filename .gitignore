@@ -9,3 +9,6 @@ node_modules
 
 # Ignore built ts files
 dist/**/*
+
+# RH json response examples 
+data.js
