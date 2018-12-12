@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test event initialization expect object to match snapshot 1`] = `
+OrderMetadata {
+  "fundamentals": Object {
+    "average_volume": "32430680.191200",
+    "average_volume_2_weeks": "41885606.111100",
+    "dividend_yield": "1.204900",
+    "high": "182.389900",
+    "high_52_weeks": "233.470000",
+    "low": "176.270000",
+    "low_52_weeks": "150.240000",
+    "market_cap": "878816512500.000000",
+    "open": "180.920000",
+    "pe_ratio": "14.887110",
+    "shares_outstanding": "4754986000.000000",
+    "volume": "15204403.000000",
+  },
+  "quote": Object {
+    "adjusted_previous_close": "184.820000",
+    "ask_price": "176.720000",
+    "ask_size": 200,
+    "bid_price": "176.560000",
+    "bid_size": 200,
+    "has_traded": true,
+    "last_extended_hours_trade_price": "176.500000",
+    "last_trade_price": "176.690000",
+    "last_trade_price_source": "consolidated",
+    "previous_close": "184.820000",
+    "previous_close_date": "2018-12-03",
+    "symbol": "AAPL",
+    "trading_halted": false,
+    "updated_at": "2018-12-05T00:59:41Z",
+  },
+}
+`;
