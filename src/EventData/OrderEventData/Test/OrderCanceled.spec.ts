@@ -5,7 +5,11 @@ const MockedData = jest.fn<IData>(() => ({ testData: "test" }));
 const data = new MockedData();
 
 describe("test BuyOrderCanceled initialization", () => {
-  const buyOrderCanceled = new OrderCanceled("id", 1, data);
+  const buyOrderCanceled = new OrderCanceled("buy", "id", 1, data);
+
+  test("expect side to be 'buy'", () => {
+    expect(buyOrderCanceled.side).toEqual("buy");
+  });
 
   test("expect version to be what was passed '1'", () => {
     expect(buyOrderCanceled.version).toEqual(1);

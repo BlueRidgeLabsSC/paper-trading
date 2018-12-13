@@ -7,8 +7,15 @@ export default abstract class OrderEventDataBase extends EventDataBase {
   data: OrderData;
   metadata?: OrderMetadata;
   abstract state: string;
+  side: string;
 
-  constructor(aggregate_id: string, version: number, data: IData) {
+  constructor(
+    side: string,
+    aggregate_id: string,
+    version: number,
+    data: IData
+  ) {
     super(aggregate_id, version, data);
+    this.side = side;
   }
 }

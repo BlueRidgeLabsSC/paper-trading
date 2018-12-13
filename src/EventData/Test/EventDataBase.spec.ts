@@ -1,7 +1,9 @@
 import EventDataBase from "../EventDataBase";
 import IData from "../../Data/IData";
 
-class EventDataTest extends EventDataBase {}
+class EventDataTest extends EventDataBase {
+  side: "buy";
+}
 
 const MockedData = jest.fn<IData>();
 

@@ -5,7 +5,11 @@ const MockedData = jest.fn<IData>(() => ({ testData: "test" }));
 const data = new MockedData();
 
 describe("test BuyOrderFilled initialization", () => {
-  const buyOrderFilled = new OrderFilled("id", 1, data);
+  const buyOrderFilled = new OrderFilled("buy", "id", 1, data);
+
+  test("expect side to be 'buy'", () => {
+    expect(buyOrderFilled.side).toEqual("buy");
+  });
 
   test("expect version to be what was passed '1'", () => {
     expect(buyOrderFilled.version).toEqual(1);
