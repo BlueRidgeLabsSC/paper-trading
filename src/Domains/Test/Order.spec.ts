@@ -65,9 +65,9 @@ describe("dispatching a place order event", () => {
     expect(orderAggregate).toBeDefined();
   });
 
-  test("expect version '1'", async () => {
+  test("expect version '0'", async () => {
     const orderAggregate = await order.get("id");
-    expect(orderAggregate.version).toBe(1);
+    expect(orderAggregate.version).toBe(0);
   });
 
   test("expect side version 'buy'", async () => {
@@ -87,16 +87,16 @@ describe("dispatching a place order event", () => {
   const order = new Order(broker);
 
   broker.dispatch(new PlaceOrder("buy", new OrderData(), "id"));
-  broker.dispatch(new QueueOrder(new OrderData(), "id"));
+  broker.dispatch(new QueueOrder(new OrderData(), 0, "id"));
 
   test("expect new aggregate to be created and stored", async () => {
     const orderAggregate = await order.get("id");
     expect(orderAggregate).toBeDefined();
   });
 
-  test("expect version '2'", async () => {
+  test("expect version '1'", async () => {
     const orderAggregate = await order.get("id");
-    expect(orderAggregate.version).toBe(2);
+    expect(orderAggregate.version).toBe(1);
   });
 
   test("expect state to be 'placed'", async () => {

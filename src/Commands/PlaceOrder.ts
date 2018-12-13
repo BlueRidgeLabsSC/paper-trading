@@ -1,3 +1,4 @@
+import { v4 as uuid } from "uuid";
 import OrderBase from "./OrderBase";
 import OrderData from "../Data/OrderData";
 import OrderMetadata from "../Metadata/OrderMetadata";
@@ -9,10 +10,10 @@ export default class PlaceOrder extends OrderBase {
   constructor(
     side: string,
     data: OrderData,
-    aggregate_id?: string,
+    aggregate_id: string = uuid(),
     metadata?: OrderMetadata
   ) {
-    super(data, aggregate_id, metadata);
+    super(data, 0, aggregate_id, metadata);
     this.side = side;
   }
 }

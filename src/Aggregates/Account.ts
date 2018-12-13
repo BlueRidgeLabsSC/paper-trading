@@ -14,7 +14,7 @@ export default class Account extends AggregateBase {
   private stockValue: number;
 
   constructor(broker: CommandBroker) {
-    super();
+    super(broker, "account");
 
     broker.register(OrderPlaced.name, this.handleOrderPlaced.bind(this));
     broker.register(OrderFilled.name, this.handleOrderFilled.bind(this));

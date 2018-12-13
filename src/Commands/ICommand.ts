@@ -7,4 +7,5 @@ export default interface ICommand<
 > {
   data: TData;
   metadata?: TMetadata;
+  version: number;
 }

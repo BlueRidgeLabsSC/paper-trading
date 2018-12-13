@@ -23,6 +23,7 @@ export default class Order extends DomainBase<OrderAggregate> {
   private async place(placeOrder: PlaceOrder) {
     const order = new OrderAggregate(
       this.broker,
+      "buy",
       placeOrder.aggregate_id,
       placeOrder.data,
       placeOrder.metadata
@@ -43,7 +44,12 @@ export default class Order extends DomainBase<OrderAggregate> {
   private async queue(queueOrder: QueueOrder) {
     const order = await this.get(queueOrder.aggregate_id);
 
-    if (order.state != "placed") return;
+    if (order.state != "placed" || queueOrder.version != order.version) {
+      throw new Error("figure out what needs to happen here");
+    }
+
+    order.version++;
+    order.queue(queueOrder.data);
 
     this.broker.dispatch(
       new OrderQueued(
@@ -58,7 +64,13 @@ export default class Order extends DomainBase<OrderAggregate> {
   private async cancel(cancelOrder: CancelOrder) {
     const order = await this.get(cancelOrder.aggregate_id);
 
+    if (order.version != cancelOrder.version) {
+      throw new Error("figure out what needs to happen here");
+    }
+
     if (order.state == "placed" || order.state == "queued") {
+      order.version++;
+      order.cancel(cancelOrder.data);
       this.broker.dispatch(
         new OrderCanceled(
           order.side,
@@ -73,7 +85,12 @@ export default class Order extends DomainBase<OrderAggregate> {
   private async fill(fillOrder: FillOrder) {
     const order = await this.get(fillOrder.aggregate_id);
 
-    if (order.state != "queued") return;
+    if (order.state != "queued" || order.version != fillOrder.version) {
+      throw new Error("figure out what needs to happen here");
+    }
+
+    order.version++;
+    order.fill(fillOrder.data);
 
     this.broker.dispatch(
       new OrderFilled(

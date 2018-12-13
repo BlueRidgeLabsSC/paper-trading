@@ -5,7 +5,7 @@ const MockedData = jest.fn<OrderData>();
 const data = new MockedData();
 
 describe("test FillOrder initialization", () => {
-  const order = new FillOrder(data);
+  const order = new FillOrder(data, 0);
 
   test("expect state to be 'fill'", () => {
     expect(order.state).toEqual("fill");

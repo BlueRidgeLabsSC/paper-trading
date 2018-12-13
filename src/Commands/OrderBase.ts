@@ -10,9 +10,10 @@ export default abstract class OrderBase extends CommandBase<
 
   constructor(
     data: OrderData,
+    version: number,
     aggregate_id?: string,
     metadata?: OrderMetadata
   ) {
-    super(data, aggregate_id, metadata);
+    super(data, version, aggregate_id, metadata);
   }
 }

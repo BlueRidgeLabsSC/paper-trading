@@ -5,7 +5,7 @@ const MockedData = jest.fn<OrderData>();
 const data = new MockedData();
 
 describe("test CancelOrder initialization", () => {
-  const order = new CancelOrder(data);
+  const order = new CancelOrder(data, 0);
 
   test("expect state to be 'cancel'", () => {
     expect(order.state).toEqual("cancel");

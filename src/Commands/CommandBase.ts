@@ -9,10 +9,17 @@ export default abstract class CommandBase<
   data: TData;
   metadata?: TMetadata;
   aggregate_id?: string;
+  version: number;
 
-  constructor(data: TData, aggregate_id?: string, metadata?: TMetadata) {
+  constructor(
+    data: TData,
+    version: number,
+    aggregate_id?: string,
+    metadata?: TMetadata
+  ) {
     this.data = data;
     this.aggregate_id = aggregate_id;
     this.metadata = metadata;
+    this.version = version;
   }
 }
